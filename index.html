@@ -21,8 +21,12 @@
             var h = 1;
             var b = 3;
 
+            var result = document.querySelector('#result');
+            console.log(result)
+
             function computeTriangleArea() {
                 console.log((h * b) / 2);
+                result.innerHTML = (h * b) / 2;                
             }
 
             // 1. Получить элемент
@@ -49,6 +53,7 @@
     </script>
     <body>
         <div class="container">
+            <h1>Triangle Area Calculator</h1>
             <div> 
                 <label for="height-input">Heihgt</label>
                 <input class="form-control" id="height-input" type="text">
@@ -56,6 +61,9 @@
             <div> 
                 <label for="base-input">Base</label>
                 <input class="form-control" id="base-input" type="text">
+            </div>
+            <div>
+                Result: <span id="result"></span>
             </div>
         </div>
     </body>
