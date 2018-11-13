@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Triangle Area
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            main();
+        });
+
+        // Triangle Area:
+        //   A = (h * b) / 2
+        //   h - heihgt
+        //   b - base
+
+        function main() {
+
+            var h = 1;
+            var b = 3;
+
+            function computeTriangleArea() {
+                console.log((h * b) / 2);
+            }
+
+            // 1. Получить элемент
+            var heightInput = document.querySelector('#height-input');
+
+            // 2. Подписаться на изменения в поле ввода
+            heightInput.addEventListener(
+                'change',
+                function (event) {
+                    // 3. Обновить значение "h" и пересчитать площадь
+                    h = event.target.value;
+                    computeTriangleArea();
+                }
+            );
+            var baseInput = document.querySelector('#base-input');
+            baseInput.addEventListener(
+                'change',
+                function (event) {
+                    b = event.target.value;
+                    computeTriangleArea();
+                }
+            )
+        }
+    </script>
+    <body>
+        <div class="container">
+            <div> 
+                <label for="height-input">Heihgt</label>
+                <input class="form-control" id="height-input" type="text">
+            </div>
+            <div> 
+                <label for="base-input">Base</label>
+                <input class="form-control" id="base-input" type="text">
+            </div>
+        </div>
+    </body>
+</html>
